@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big link image in frame</title>
+    <style>
+        /* !!!! The "Unexplained extra padding on bottom of div" went away
+        when I switched to overflow-y: hidden instead of scroll? */
+        *{
+            --scale: 0.55;
+            --img-width: 800px;
+            --standard-screen-height: 640px;
+        }
+        body{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .img-wrapper {
+            /* i can NOT figure out how to fix the padding at the bottom of the divs */
+            margin: 16px;
+            height: calc(var(--standard-screen-height)*var(--scale));;
+            /* max-height: 50vh; */
+            /*max-height: 130vh; /*since I'm scaling this div, 
+                            the height actually ends up being 
+                            sacle*vh, so 100vh*0.65 = 65vh; */
+            width: calc(var(--img-width)*var(--scale));
+            background-color: black;
+            position: relative;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            border: 2px solid darkblue;
+            border-radius: 10px;
+        }
+        .img-wrapper>img {
+            position: relative;
+            -ms-zoom: calc(var(--scale));
+            -moz-transform: scale(calc(var(--scale)));
+            -moz-transform-origin: 0 0;
+            -o-transform: scale(calc(var(--scale)));
+            -o-transform-origin: 0 0;
+            -webkit-transform: scale(calc(var(--scale)));
+            -webkit-transform-origin: 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img-wrapper">
+        <img src="./images/nasa.png" alt="image"></img>
+    </div>
+    <div class="img-wrapper">
+        <img src="./images/melshtastic.png" alt="image"></img>
+    </div>
+    <div class="img-wrapper">
+        <img src="./images/thispage.png" alt="image"></img>
+    </div>
+    <div class="img-wrapper">
+        <img src="./images/reuters_japan.png" alt="image"></img>
+    </div>
+    <div class="img-wrapper">
+        <img src="./images/empathy_mapping.png" alt="image"></img>
+    </div>
+    <div class="img-wrapper">
+        <img src="./images/cointelegraph.png" alt="image"></img>
+    </div>
+    <div class="img-wrapper">
+        <img src="./images/reuters_germany.png" alt="image"></img>
+    </div>
+    <div class="img-wrapper">
+        <img src="./images/coindesk.png" alt="image"></img>
+    </div>
+    <div class="img-wrapper">
+        <img src="./images/crypto.png" alt="image"></img>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "mynewsshotproject",
+  "version": "1.0.0",
+  "description": "Saving Sreenshots of websites via script",
+  "main": "snapshot.js",
+  "scripts": {
+    "start": "node --require dotenv/config snapshot.js"
+  },
+  "author": "David Melsheimer",
+  "license": "MIT",
+  "dependencies": {
+    "cloudinary": "^1.28.1",
+    "dotenv": "^16.0.0",
+    "puppeteer": "^13.2.0"
+  }
+}
